@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Chatbot</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+        }
+
+        .chat-container {
+            width: 400px;
+            margin: 60px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #aaa;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: #4a6cf7;
+            color: white;
+            padding: 18px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        .chat-box {
+            height: 400px;
+            padding: 15px;
+            overflow-y: auto;
+        }
+
+        .bot-message,
+        .user-message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 8px;
+            max-width: 75%;
+        }
+
+        .bot-message {
+            background: #e5e5e5;
+            text-align: left;
+        }
+
+        .user-message {
+            background: #4a6cf7;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .input-area {
+            display: flex;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+
+        .input-area input {
+            flex: 1;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .input-area button {
+            margin-left: 8px;
+            padding: 12px 18px;
+            background: #4a6cf7;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="chat-container">
+
+    <div class="chat-header">
+        🤖 My Chatbot
+    </div>
+
+    <div class="chat-box" id="chatBox">
+
+        <div class="bot-message">
+            Hello! How can I help you?
+        </div>
+
+    </div>
+
+    <form action="ChatServlet" method="post">
+
+        <div class="input-area">
+
+            <input type="hidden" name="sender" value="Mahima">
+
+            <input
+                type="text"
+                name="message"
+                placeholder="Type your message..."
+                required
+            >
+
+            <button type="submit">
+                Send
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+</body>
+</html>
